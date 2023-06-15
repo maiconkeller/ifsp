@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  postgres-db:
+    build: ./dockers/postgresql
+#    volumes: #comente caso esteja usando windows
+#      - ./dockers/postgresql/pgdata/pgdata
+    ports:
+      - "7557:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/pgdata
+      - POSTGRES_DB=receitas_db
